@@ -14,6 +14,7 @@ String is safe but slow and one more thing String is thread safe
 // like String in String equals method compare values in string not their references
 //although it's stored in heap or string pool
 
+In java there is two ways to create String literal, second is using new keyword
 
  String s1 = "Hello"; //resolved at C-T
         String s2 = s1 +  " World"; //resolved at R-T or dynamically
@@ -23,3 +24,19 @@ String is safe but slow and one more thing String is thread safe
 
         //String pool -->"Hello","World","Hello World"
         //Heap        -->"Hello World"
+
+
+      .  String is wrapper on character array firstly
+      . we use ascii standard which all values comes in one byte
+      . that is why char to byte array on String it take 1 byte
+      . In String class There is Coder which gives 0 for1 byte read at time
+     .  and give one for read 2 byte at time in case of hindi or chinese keyword which
+     stored in two byte
+
+     .there is hash which cache the hashing values
+
+     String is final that no one can aquire her characterisric that is why it is immutable
+
+
+==============================================================================================
+
