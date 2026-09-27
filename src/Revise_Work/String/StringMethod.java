@@ -20,7 +20,7 @@ public class StringMethod {
         //Length / Emptiness
 
         String s1 = new String("Jahangeer");
-        String s2 = new String("  Jahangeer  ");
+        String s2 = new String("     Jahangeer");
 //        System.out.println(s.length());
 //        System.out.println(s.isEmpty());
 //        System.out.println(s.isBlank());//is spaces exist true
@@ -55,7 +55,7 @@ public class StringMethod {
 //        System.out.println(s1.substring(5));
 //        System.out.println(s1.toUpperCase());
 //        System.out.println(s1.toLowerCase());
-//        System.out.println(s2.trim());
+       System.out.println(s2.trim());
 //        System.out.println(s2.strip());//in unicode
 //        System.out.println(s2.repeat(3));
 //        System.out.println(s1.replace('J','A'));

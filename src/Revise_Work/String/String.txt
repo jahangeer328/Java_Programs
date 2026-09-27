@@ -37,6 +37,27 @@ In java there is two ways to create String literal, second is using new keyword
 
      String is final that no one can aquire her characterisric that is why it is immutable
 
+String final optimization
+.immutable
+.50% percent memory reduce
+.hash for cache hashcode values
+.coder 0, 1
 
+But there is problem every time if String is changed new object will created on every change
+safe reference another object except first one
+
+that Why two more Classes were introduce in String World
+
+1--- StringBuilder
+2---StringBuffer
 ==============================================================================================
+
+StringBuilder is Mutable is note thread safe
+
+StringBuffer is Mutable but thread safe
+
+both inherited AbstractStringBuilder
+
+initially capacity is 16 if all ful it will double the capacity
+
 

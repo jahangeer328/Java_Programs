@@ -1,0 +1,3 @@
+
+                                    GENERICS
+Generics is general purpose classes which work with all types of data
