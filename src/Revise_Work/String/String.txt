@@ -45,6 +45,7 @@ String final optimization
 
 But there is problem every time if String is changed new object will created on every change
 safe reference another object except first one
+this will take lots of memory
 
 that Why two more Classes were introduce in String World
 
@@ -52,12 +53,13 @@ that Why two more Classes were introduce in String World
 2---StringBuffer
 ==============================================================================================
 
-StringBuilder is Mutable is note thread safe
+StringBuilder is Mutable is note thread safe, fast, mostly used in industry
 
-StringBuffer is Mutable but thread safe
+StringBuffer is Mutable but thread safe, slow
 
 both inherited AbstractStringBuilder
 
 initially capacity is 16 if all ful it will double the capacity
+(initial capacity + type size)*2
 
 

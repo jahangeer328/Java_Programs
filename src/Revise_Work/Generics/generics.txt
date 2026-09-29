@@ -1,3 +1,67 @@
 
-                                    GENERICS
-Generics is general purpose classes which work with all types of data
+--> GENERICS
+
+# data types basically tell the rule what does it store
+
+# Java is types language
+
+UPCASTING AND DOWN-CASTING
+
+
+        //upcasting shorter data types convert easily in broader data types
+        int x = 200;
+        long l = x;
+
+        //DownCasting broader data types can't convert into shorter data types easily
+        //then using type casting means hey compiler I want to do it
+
+        long l1 = 20000;
+       // int x1 = l;//you should tell the compiler it is compulsory, I really want to do
+        int x2 = (int) l1;
+
+# every time manual castings
+# lots of compile time and runtime errors
+
+@@ What is problem which introduce  Generics
+
+1--> every time for new data like string,int , float we create new classes
+2--> No code reusability
+3--> more memory used
+
+Using Object class we make the class general class
+because object class is parent class of all in java
+
+# object class accept every type of data
+
+--> using object class with fields java is able to store every type data in fields
+--> but can't perform any operation like int + 5, string + 5
+--> if we want to perform operation we have to tell the compiler I want to do
+--> this will create lot's of manual castings
+--> if mistake in manual casting it will be big crash on runtime
+--> that why using object with fields it makes class too generic
+
+
+//too generic = tye information will lost
+        //if data coming from file,api call then this down casting is very dangerous
+        //it will cause of runtime Exception which is ClassCastException
+        //although for production level this will not prefer this
+        //at production level use of generic is safe
+        //because of
+        // no manual casting, no runtime Exception  cast, code reusability increase
+        //decrease memory usage
+
+Generics use with class
+<>Symbol
+class Box <T> --> Type parameter
+and in Expecting value called arguments
+
+also generics use with methods
+<T> t/void aslo can use during giving argument java will infer the types if type parameter is in pair
+
+use classes with upperbound it amazing part of todays journey i restrict the class work with given classes
+<T extends Number>//use with which extends Number class
+<T extends Animal & swimAble> //use with which extends animal and must implements swimAble interface
+
+part1 Conclusion
+generics is general purpose classes which can work every type data
+generics increase code reusability ,reduce error,no more manual casting
