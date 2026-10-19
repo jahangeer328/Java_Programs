@@ -1,0 +1,232 @@
+Previous Learnin
+--------+--------
+let in previous Class I learned
+
+problem before the generics
+
+using object class have lot's of advantage,manual casting,runtime error,too generic and not perform operations
+
+then i learned the general purpose class which help me to create
+
+a class which can work with every type of data
+
+no manual casting ,type safety, no runtime error,code reusability is increased
+
+code is easy understandable,easy to maintain,
+
+work with type parameter,passing arguments,work with pair generics class using two type parameter
+
+work with function single type parameter and give pair woth return type void
+
+which is very interesting part which infer the type of argument which passed
+======================================================================================
+Wild Cards | part 1 problem describe on copy
+------------
+Wild Card is soul of Java Generic
+
+why wild card introduced in java??
+
+problem is In java generics (parent and child relationship will broken)
+
+parent reference also can point to the child Object (In inheritance adn polymorphism)
+
+this problem comes because generics is (INVARIANT)
+
+if it allow in generic parent can point child objects
+
+it will break the type safety
+
+normally>> A is child of B --> is-a relationship
+in Generics>> generics<A> is not a subtype/child of generics<B>
+
+normally parent can point child object but in generic is invariant it break the is-a relationship
+
+
+ List<Dog> dogs = new ArrayList<>();
+
+       // List<Animal> animals = dogs; // parent can't point in generics
+        //Generics is invariant
+        //in Normal case Dog is child of ANIMAL
+        //BUT IN generics list of Dog is not child of list of animal
+
+ But in case of array
+ arrays is covariant but problem will come which prevent by generics
+ generics gives compile time error but arrays not gives compile time error
+ it give runtime errors
+
+
+that why wildcard are introduce in java generics
+-------------------------------------------
+WildCard | part 2
+=========
+Wildcards denoted by (?)
+
+means it can accept every type of list or specific type we don't what
+
+WILD CARDS provide limited scope for working
+
+Wild Card always work with function
+
+not use with class <> This will accept only type paramter ad it works with upperbound and lower
+
+NORMAL wildCards has limited scope
+we can represent any of list using normal wild card but
+but it does not allows writing only allows reading
+reading using object class
+we just call object class method like toString,hashcode,equals etc
+
+SOLUTION
+
+Use wild Card with bounds
+
+in previous learning I learn Upperbound
+
+kind of bounds
+
+1 --- Upperbound using extends keyword
+
+2 --- lower bound uisng super keyword
+
+if you want you should read and write in generics, parent list can refer child list
+
+you should use the PECS Rules in your project and learning
+
+================
+UpperBound     ||
+=================
+
+with wildcard <?> using extends keyword
+
+==============================================
+Java Generics — 3-Level Learning Roadmap
+
+Level 1 — Understand the concept
+Foundation
+Goal: explain what Generics do and why they exist.
+
+
+
+1.
+What problem do Generics solve in Java? Explain without using a textbook definition.
+
+2.
+What is the difference between T and String in class Box<T>?
+
+
+3.
+Why can Box<String> and Box<Integer> use the same class definition but store different types?
+
+
+4.
+What does type safety mean? How do Generics help the compiler detect mistakes?
+
+5.
+Why do we write List<Integer> instead of simply List when we want to store integers?
+
+
+6.
+What does the diamond operator <> do in new ArrayList<>()?
+
+
+7.
+What is the difference between a generic class and a generic method?
+
+8.
+Why is T used as a placeholder instead of hardcoding String in Box<T>?
+
+
+---------------------------------------------------------------------
+Level 2 — Logical reasoning
+Intermediate fundamentals
+Goal: predict compiler behavior and explain why.
+
+
+
+1.
+Why does List<String> names = new ArrayList<>(); compile, but names.add(25); fail to compile?
+
+
+2.
+If Box<Integer> box = new Box<>(10);, what type does box.getData() return, and why?
+
+
+3.
+Consider static <T> T identity(T value). Why can the same method accept a String on one call and an Integer on another?
+
+
+4.
+What is wrong with this assignment, and at what stage is the error detected?
+
+Box<Integer> box = new Box<>(50);
+String result = box.getData();
+
+
+
+5.
+Compare static <T> T first(T a, T b) and static <T, U> T first(T a, U b). What additional flexibility does the second method provide?
+
+
+6.
+Can Pair<String, Integer> store a String in its first field and an Integer in its second? Explain how the type parameters make that possible.
+
+
+7.
+If a generic method returns T, what must its implementation do to return a value? How is this different from a method returning void?
+
+
+8.
+Why does List<Integer> help prevent accidental insertion of a String compared with using a raw List?
+
+-------------------------------------------------------------
+
+Level 3 — Apply and design
+Independent thinking
+Goal: choose an appropriate generic design and justify it.
+
+
+
+1.
+Design a generic Storage<T> class that stores one value, lets a caller update it, and returns it. Explain why T should be used for the field and methods.
+
+
+2.
+Design a generic method that accepts two values of the same type and returns the second value. What should its return type be?
+
+3.
+You are building a student management system. Would you use List<Student> or List<Object> for storing students? Justify your choice.
+
+
+4.
+A teammate writes class Result<T> { private T data; }. How would you add a constructor and getter without losing the type-safety benefit?
+
+
+5.
+Suppose you need to store a product name and its numeric price together. Would Pair<T> or Pair<T, U> fit better? Explain your design choice.
+
+
+6.
+Write a generic method that returns the first element from two inputs of the same type. Predict what happens if the inputs have different types.
+
+7.
+A method accepts a generic value but never returns it; instead, it prints it. Should it return T or void? Explain based on the method's responsibility.
+
+
+8.
+Explain how Generics can make a collection-based application easier to maintain when different developers add new features.
+
+
+======================================
+How to work through the levels
+- Level 1: Explain the concept in your own words, without memorizing definitions.
+- Level 2: Predict the result first, then justify whether the compiler accepts the code.
+- Level 3: Write code, test your design, and explain why you chose it.
+My recommendation is to complete each level before moving on. We can review your answers one by one and revisit any weak concept before advancing.
+Start with Level 1, Question 1: What problem do Java Generics solve, and why are they useful?
+
+
+if you use extends you can only read
+
+or
+
+you use super you can write only
+

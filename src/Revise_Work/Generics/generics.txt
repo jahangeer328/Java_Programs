@@ -65,3 +65,5 @@ use classes with upperbound it amazing part of todays journey i restrict the cla
 part1 Conclusion
 generics is general purpose classes which can work every type data
 generics increase code reusability ,reduce error,no more manual casting
+
+

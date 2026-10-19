@@ -36,7 +36,7 @@ class Dog extends Animal{
 class LabraDog extends Dog{
 
 }
-class Cat{
+class  Cat{
 
 }
 public class WildCards {
